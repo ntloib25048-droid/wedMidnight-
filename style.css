@@ -364,3 +364,21 @@ body {
         height: 80px;
     }
 }
+/* --- ÉP CÁC Ô THÀNH VIÊN CAO BẰNG NHAU --- */
+.member-card {
+    height: 100%; /* Câu thần chú ép mấy cái hộp phải cao bằng nhau nè */
+    justify-content: flex-start; 
+}
+
+/* Chỉnh riêng cho điện thoại đặng chữ bớt rớt dòng */
+@media (max-width: 768px) {
+    .member-name {
+        font-size: 0.85rem; /* Thu nhỏ chữ tên lại xíu cho gọn */
+        text-align: center;
+        word-break: break-word; /* Ép chữ dài quá thì tự ngắt cho đẹp */
+    }
+    
+    .member-card {
+        padding: 20px 10px; /* Bóp cái viền hộp lại xíu đặng chừa chỗ cho chữ */
+    }
+}
