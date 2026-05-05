@@ -274,3 +274,46 @@ body {
     /* Hiệu ứng đẩy mũi tên qua phải khi rà chuột */
     transform: translateX(8px); 
 }
+
+@media (max-width: 768px) {
+  
+    .navbar {
+        flex-direction: column; 
+        padding: 15px 10px;
+        gap: 15px;
+    }
+    
+   
+    .logo-container {
+        justify-content: center;
+    }
+    
+   
+    .nav-links {
+        gap: 15px; 
+        justify-content: center;
+        width: 100%;
+    }
+    
+   
+    .nav-links li a {
+        font-size: 0.9rem; 
+    }
+    
+   
+    .btn-member {
+        padding: 8px 12px; 
+        font-size: 0.9rem;
+    }
+    
+   
+    .hero-content h1 {
+        font-size: 2.5rem; 
+    }
+    
+   
+    .moon {
+        width: 80px;
+        height: 80px;
+    }
+}
