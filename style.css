@@ -317,3 +317,50 @@ body {
         height: 80px;
     }
 }
+/* --- CHỈNH GIAO DIỆN RIÊNG CHO ĐIỆN THOẠI --- */
+@media (max-width: 768px) {
+    /* Đẩy menu rớt xuống dưới logo cho rộng chỗ */
+    .navbar {
+        flex-direction: column; 
+        padding: 15px 10px;
+        gap: 15px;
+    }
+    
+    /* Canh giữa logo và thu nhỏ chữ MIDNIGHT CLUB lại xíu */
+    .logo-container {
+        justify-content: center;
+    }
+    .logo-text {
+        font-size: 1.2rem; 
+    }
+    
+    /* Ép khoảng cách 2 nút menu gần lại */
+    .nav-links {
+        gap: 15px; 
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+    }
+    
+    /* Thu nhỏ chữ menu lại một xíu */
+    .nav-links li a {
+        font-size: 0.9rem; 
+    }
+    
+    /* Thu nhỏ cái viền nút Thành Viên lại đặng không bị tràn */
+    .btn-member {
+        padding: 8px 12px; 
+        font-size: 0.9rem;
+    }
+    
+    /* Thu nhỏ chữ bự ngoài trang chủ cho vừa màn hình đt */
+    .hero-content h1 {
+        font-size: 2.5rem; 
+    }
+    
+    /* Thu nhỏ mặt trăng lại xíu cho khỏi vướng víu */
+    .moon {
+        width: 80px;
+        height: 80px;
+    }
+}
