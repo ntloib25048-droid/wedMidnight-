@@ -1,0 +1,276 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+    background: linear-gradient(135deg, #090a0f 0%, #1c1a27 50%, #121420 100%);
+    color: #e0e0e0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* --- HIỆU ỨNG MẶT TRĂNG DI CHUYỂN --- */
+.moon {
+    position: absolute;
+    top: 10%;
+    left: -150px;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle at 30% 30%, #fffde4, #e8e6c7, #aba98f);
+    border-radius: 50%;
+    box-shadow: 0 0 50px 10px rgba(255, 253, 228, 0.4);
+    /* Gọi hiệu ứng di chuyển, lặp lại mãi mãi */
+    animation: moonGlide 40s linear infinite;
+    z-index: 0;
+}
+
+@keyframes moonGlide {
+    0% { transform: translate(0, 0) scale(0.9); opacity: 0.8; }
+    50% { transform: translate(50vw, -30px) scale(1); opacity: 1; }
+    100% { transform: translate(110vw, 20px) scale(0.9); opacity: 0.8; }
+}
+
+/* --- THANH ĐIỀU HƯỚNG --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(18, 20, 32, 0.7);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Chỗ để logo */
+.logo-img {
+    height: 50px;
+    width: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.logo-img {
+    height: 60px; 
+    width: 60px;  
+    border-radius: 50%; 
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    object-fit: cover; 
+    background-color: #2a2c40; /* Đổ miếng màu nền lót xám xanh cho dễ nhìn lúc chưa có hình */
+    color: transparent; /* Giấu cái dòng chữ xấu xí đi tạm */
+}
+/* Các nút menu */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #a0a5ba;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+}
+
+.nav-links li a:hover, .nav-links li a.active {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+/* Nút Thành Viên Nhóm */
+.btn-member {
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid #5d6799;
+    border-radius: 25px;
+    color: #fff !important;
+}
+
+.btn-member:hover {
+    background: #5d6799;
+    box-shadow: 0 0 15px rgba(93, 103, 153, 0.6);
+}
+
+/* --- PHẦN NỘI DUNG CHÍNH --- */
+.hero-section {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 90px);
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.highlight {
+    color: #b8c0ff;
+    text-shadow: 0 0 20px rgba(184, 192, 255, 0.6);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #a0a5ba;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* Nút Khám Phá */
+.btn-primary {
+    text-decoration: none;
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #121420;
+    background: #b8c0ff;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(184, 192, 255, 0.4);
+}
+
+.btn-primary:hover {
+    background: #fff;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+    transform: translateY(-3px);
+}
+/* --- TRANG THÀNH VIÊN --- */
+.members-section {
+    padding: 50px 20px;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Chia lưới 10 ô: 5 cột, 2 hàng */
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Canh lại cho màn hình điện thoại, ipad đặng không bị bể */
+@media (max-width: 1000px) {
+    .members-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+    .members-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Trang trí ô thành viên */
+.member-card {
+    background: rgba(30, 32, 48, 0.5); /* Nền kính mờ */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px 15px;
+    backdrop-filter: blur(8px);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(184, 192, 255, 0.4);
+    border-color: #b8c0ff;
+    background: rgba(40, 42, 60, 0.7);
+}
+
+/* Chỗ để hình */
+.img-placeholder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #121420; 
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 3px solid #5d6799; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+.member-card:hover .img-placeholder {
+    border-color: #b8c0ff;
+    box-shadow: 0 0 15px rgba(184, 192, 255, 0.5);
+}
+
+.img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-name {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+}
+
+/* --- MŨI TÊN QUA TRANG TIẾP --- */
+.pagination {
+    margin-top: 60px;
+}
+
+.next-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #b8c0ff;
+    text-decoration: none;
+    padding: 12px 30px;
+    border: 2px solid #b8c0ff;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    background: rgba(184, 192, 255, 0.05);
+}
+
+.next-arrow:hover {
+    background: #b8c0ff;
+    color: #121420;
+    box-shadow: 0 0 20px rgba(184, 192, 255, 0.6);
+    /* Hiệu ứng đẩy mũi tên qua phải khi rà chuột */
+    transform: translateX(8px); 
+}
