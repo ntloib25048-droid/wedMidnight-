@@ -382,3 +382,37 @@ body {
         padding: 20px 10px; /* Bóp cái viền hộp lại xíu đặng chừa chỗ cho chữ */
     }
 }
+/* --- HIỆU ỨNG RỒNG VÀNG BAY --- */
+.golden-dragon {
+    position: absolute;
+    width: 350px; /* Chỉnh cho bự nhỏ tùy ý nghen */
+    top: 25%;
+    left: -400px; /* Cho nó núp ở ngoài màn hình trước */
+    z-index: 8; /* Bay dưới thanh navbar nhưng trên mấy cái khác */
+    filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.8)); /* Phủ vầng hào quang chói lóa */
+    animation: dragonFly 18s ease-in-out infinite;
+    pointer-events: none; /* Tránh vụ click nhầm trúng con rồng */
+}
+
+/* Khung chuyển động uốn lượn cho con rồng */
+@keyframes dragonFly {
+    0% {
+        transform: translate(0, 0) scale(0.8) rotate(15deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1; /* Hiển thị ra nè */
+    }
+    50% {
+        /* Bay tới giữa màn hình thì lượn xuống xíu */
+        transform: translate(65vw, -80px) scale(1.1) rotate(5deg);
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        /* Bay tuốt ra ngoài lề phải */
+        transform: translate(120vw, -120px) scale(0.8) rotate(-10deg);
+        opacity: 0;
+    }
+}
