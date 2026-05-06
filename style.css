@@ -275,48 +275,55 @@ body {
     transform: translateX(8px); 
 }
 
+/* --- CHỈNH GIAO DIỆN RIÊNG CHO ĐIỆN THOẠI (Đã bóp gọn cho 3 nút) --- */
 @media (max-width: 768px) {
-    
     .navbar {
         flex-direction: column; 
         padding: 15px 10px;
         gap: 15px;
     }
-    
-    
     .logo-container {
         justify-content: center;
     }
+    .logo-text {
+        font-size: 1.2rem; 
+    }
     
-    
+    /* Ép 3 nút lại gần nhau, lỡ chật quá thì tự rớt dòng cực đẹp */
     .nav-links {
-        gap: 15px; 
+        gap: 8px; /* Bóp khoảng cách 3 nút sát lại */
         justify-content: center;
         width: 100%;
+        padding: 0;
+        flex-wrap: wrap; /* Câu thần chú chống tràn khung */
     }
-    
-    
     .nav-links li a {
-        font-size: 0.9rem; 
+        font-size: 0.85rem; /* Ép chữ nhỏ lại xíu */
     }
-    
-    
     .btn-member {
-        padding: 8px 12px; 
-        font-size: 0.9rem;
+        padding: 6px 10px; /* Bóp cái viền nút thành viên lại */
+        font-size: 0.85rem;
     }
-    
     
     .hero-content h1 {
-        font-size: 2.5rem; 
+        font-size: 2.2rem; /* Chữ giữa màn hình nhỏ lại tí cho thoáng */
     }
-    
-    
     .moon {
         width: 80px;
         height: 80px;
     }
+
+    /* Giữ nguyên cái bóp tên thành viên chống rớt chữ hôm bữa */
+    .member-name {
+        font-size: 0.85rem;
+        text-align: center;
+        word-break: break-word;
+    }
+    .member-card {
+        padding: 20px 10px;
+    }
 }
+
 
 .golden-dragon {
     position: absolute;
@@ -373,4 +380,50 @@ body {
     position: relative;
     z-index: 1; /* Nổi lên trên con rồng */
     padding: 50px;
+}
+/* --- FORM ĐĂNG KÝ GIA NHẬP --- */
+.join-section {
+    padding: 60px 20px;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+.join-form {
+    max-width: 500px; /* Bóp cho cái form nằm gọn ở giữa */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(30, 32, 48, 0.5); /* Nền kính mờ y chang ô thành viên */
+    padding: 40px 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Chỉnh mấy cái ô nhập chữ */
+.join-form input, .join-form textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    background: #121420; /* Màu nền tối */
+    border: 1px solid #5d6799; /* Viền xanh xám */
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi bấm vô ô gõ chữ */
+.join-form input:focus, .join-form textarea:focus {
+    border-color: #b8c0ff;
+    box-shadow: 0 0 15px rgba(184, 192, 255, 0.4);
+}
+
+.join-form .btn-primary {
+    cursor: pointer;
+    border: none;
+    margin-top: 10px;
 }
