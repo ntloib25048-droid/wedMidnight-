@@ -247,7 +247,7 @@ body {
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
 }
 
-/* --- MŨI TÊN QUA TRANG TIẾP --- */
+
 .pagination {
     margin-top: 60px;
 }
@@ -271,83 +271,106 @@ body {
     background: #b8c0ff;
     color: #121420;
     box-shadow: 0 0 20px rgba(184, 192, 255, 0.6);
-    /* Hiệu ứng đẩy mũi tên qua phải khi rà chuột */
+   
     transform: translateX(8px); 
 }
-/* --- CHỈNH GIAO DIỆN RIÊNG CHO ĐIỆN THOẠI --- */
+
 @media (max-width: 768px) {
-    /* Đẩy menu rớt xuống dưới logo cho rộng chỗ */
+    
     .navbar {
         flex-direction: column; 
         padding: 15px 10px;
         gap: 15px;
     }
     
-    /* Canh giữa cái logo THANHLOI */
+    
     .logo-container {
         justify-content: center;
     }
     
-    /* Ép khoảng cách 2 nút menu gần lại */
+    
     .nav-links {
         gap: 15px; 
         justify-content: center;
         width: 100%;
     }
     
-    /* Thu nhỏ chữ menu lại một xíu */
+    
     .nav-links li a {
         font-size: 0.9rem; 
     }
     
-    /* Thu nhỏ cái viền nút Thành Viên lại đặng không bị tràn */
+    
     .btn-member {
         padding: 8px 12px; 
         font-size: 0.9rem;
     }
     
-    /* Thu nhỏ chữ bự ngoài trang chủ cho vừa màn hình đt */
+    
     .hero-content h1 {
         font-size: 2.5rem; 
     }
     
-    /* Thu nhỏ mặt trăng lại xíu cho khỏi vướng víu */
+    
     .moon {
         width: 80px;
         height: 80px;
     }
 }
-/* --- HIỆU ỨNG RỒNG VÀNG BAY --- */
+
 .golden-dragon {
     position: absolute;
-    width: 350px; /* Chỉnh cho bự nhỏ tùy ý nghen */
+    width: 350px; 
     top: 25%;
-    left: -400px; /* Cho nó núp ở ngoài màn hình trước */
-    z-index: 8; /* Bay dưới thanh navbar nhưng trên mấy cái khác */
-    filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.8)); /* Phủ vầng hào quang chói lóa */
+    left: -400px; 
+    z-index: 8;
+    filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.8)); 
     animation: dragonFly 18s ease-in-out infinite;
-    pointer-events: none; /* Tránh vụ click nhầm trúng con rồng */
+    pointer-events: none; 
 }
 
-/* Khung chuyển động uốn lượn cho con rồng */
+
 @keyframes dragonFly {
     0% {
         transform: translate(0, 0) scale(0.8) rotate(15deg);
         opacity: 0;
     }
     10% {
-        opacity: 1; /* Hiển thị ra nè */
+        opacity: 1; 
     }
     50% {
-        /* Bay tới giữa màn hình thì lượn xuống xíu */
+        
         transform: translate(65vw, -80px) scale(1.1) rotate(5deg);
     }
     90% {
         opacity: 1;
     }
     100% {
-        /* Bay tuốt ra ngoài lề phải */
+       
         transform: translate(120vw, -120px) scale(0.8) rotate(-10deg);
         opacity: 0;
     }
+}/* Chỉnh nền web tùy ý ông (ví dụ màu đen cho ngầu) */
+body {
+    margin: 0;
+    background-color: #111; /* Đổi màu nền ở đây */
+}
+
+/* Chiêu thức cho con rồng nằm làm nền */
+#canvas {
+    position: fixed; /* Ghim chết một chỗ trên màn hình */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Ép nó nằm tuốt luốt dưới cùng, không che nội dung */
+    pointer-events: none; /* TUYỆT CHIÊU: Cho phép chuột click xuyên qua con rồng để bấm trúng mấy cái nút trên web */
+}
+
+.noi-dung-web {
+    /* Code trang trí mấy cái chữ của ông để ở đây, nhớ cho màu chữ nổi lên nền nghen */
+    color: white; 
+    position: relative;
+    z-index: 1; /* Nổi lên trên con rồng */
+    padding: 50px;
 }
